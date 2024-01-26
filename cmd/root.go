@@ -39,7 +39,9 @@ func decodeSecret(secertName string, opt options) error {
 	if err != nil {
 		return err
 	}
-	fmt.Print(secret)
+	for key, val := range secret.Data {
+		fmt.Printf("%s:%s\n", key, string(val))
+	}
 
 	return nil
 }
